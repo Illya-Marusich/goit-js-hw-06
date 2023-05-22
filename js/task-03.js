@@ -21,3 +21,11 @@ const imgColEl = images
   )
   .join(" ");
 listEl.insertAdjacentHTML("beforeend", imgColEl);
+
+const pictures = document.querySelectorAll(".pictire");
+
+listEl.style.display = "flex";
+listEl.style.flexWrap = "column";
+listEl.style.listStyle = "none";
+listEl.style.gap = "20px";
+listEl.style.justifyContent = "top";
