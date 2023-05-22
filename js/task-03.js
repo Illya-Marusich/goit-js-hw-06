@@ -17,15 +17,18 @@ const listEl = document.querySelector(".gallery");
 const imgEl = document.createElement("img");
 const imgColEl = images
   .map(
-    (el) => `<li><img src = ${el.url} alt = ${el.alt} hight = 100px></img></li>`
+    (el) =>
+      `<li><img src = ${el.url} alt = ${el.alt} height = 100px></img></li>`
   )
   .join(" ");
 listEl.insertAdjacentHTML("beforeend", imgColEl);
 
 const pictures = document.querySelectorAll(".pictire");
 
-listEl.style.display = "flex";
-listEl.style.flexWrap = "column";
+listEl.style.display = "block";
+listEl.style.maxWidth = "100%";
+listEl.style.height = "auto";
+// listEl.style.flexWrap = "column";
 listEl.style.listStyle = "none";
-listEl.style.gap = "20px";
-listEl.style.justifyContent = "top";
+// listEl.style.gap = "20px";
+// listEl.style.justifyContent = "top";
