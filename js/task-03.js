@@ -14,21 +14,23 @@ const images = [
 ];
 
 const listEl = document.querySelector(".gallery");
+const liEl = document.querySelectorAll(".gallery li");
 const imgEl = document.createElement("img");
 const imgColEl = images
   .map(
-    (el) =>
-      `<li><img src = ${el.url} alt = ${el.alt} height = 100px></img></li>`
+    ({ url, alt }) =>
+      `<li class="gallery-item"><img src="${url}" alt="${alt}"></img></li>`
   )
   .join(" ");
 listEl.insertAdjacentHTML("beforeend", imgColEl);
 
-const pictures = document.querySelectorAll(".pictire");
+const pictures = document.querySelectorAll("img");
 
-listEl.style.display = "block";
-listEl.style.maxWidth = "100%";
-listEl.style.height = "auto";
-// listEl.style.flexWrap = "column";
 listEl.style.listStyle = "none";
-// listEl.style.gap = "20px";
-// listEl.style.justifyContent = "top";
+listEl.style.gap = "20px";
+
+liEl.style.width = "width: calc((100% - 20px * 2) / 3)";
+
+pictures.style.display = "block";
+pictures.style.maxWidth = "100%";
+pictures.style.height = "auto";
